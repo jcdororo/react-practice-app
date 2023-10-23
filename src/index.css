@@ -1,3 +1,15 @@
+:root {
+  --main-bg-color: #ede6da;
+  --main-btn-bg-color: #228B22;
+  --main-areaField-bg-color: #d2d4c3;
+  --main-area-bg-color: white;
+  --main-area-font-color: #5E716A;
+  --main-btn-font-color: #d2d4c3;
+  
+  
+  
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,14 +17,52 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--main-bg-color);
   
 }
-.container {
-  margin: 0, auto;
+
+
+.btn {
+  background-color: var(--main-btn-bg-color);
+  color: var(--main-btn-font-color);
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 5px;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  transition: .4s;
+
+  &:hover {
+    scale: 1.2;
+  }
 }
 
-.container .area {
-  width: 100px;
-  height: 20px;
+
+.container {
+  background-color: var(--main-areaField-bg-color);
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+}
+
+.container .areaField {
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.container .area {  
+  width: 200px;
+  height: 25px;
+  background-color: var(--main-area-bg-color);  
+  color: var(--main-area-font-color);
   resize: none;
+}
+
+.container .cont.btn-inser {
 }

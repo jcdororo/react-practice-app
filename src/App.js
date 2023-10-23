@@ -1,5 +1,6 @@
 import './App.css';
-import TodoInput from './components/TodoInput/index.js';
+import TodoHeader from './components/TodoHeader';
+import TodoInput from './components/TodoInput';
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
 
   return (
     <div>
+      <TodoHeader />
       <TodoInput />
 
     </div>
