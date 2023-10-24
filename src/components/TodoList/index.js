@@ -7,7 +7,7 @@ const TodoList = () => {
   return (
     <div className='container'>
       <div className='container todoList'>
-        {value.map(item => <div>{item}</div>)}
+        {value.map(item => <div className='lists'>{item}</div>)}
       </div>
     </div>
   )

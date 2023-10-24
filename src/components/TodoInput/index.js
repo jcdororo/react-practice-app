@@ -11,21 +11,31 @@ import { TodoContext } from '../../context/TodoContext';
   console.log(value)
   
 
-  const handleChange = (event) => {
-    setInputValue(event.target.value);
+  const handleChange = (event) => {  
+    setInputValue(event.target.value)
   }
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
-    setArrTodoList([...value, inputValue]);
-  
+    // 빈칸일 때 리스트에 추가 되면 안된다.
+    if(inputValue != ''){
+      setArrTodoList([...value, inputValue]);
+    }
     setInputValue('');
+  }
+
+  const handleKeyDown = (event) => {
+    if(event.key === "Enter") {
+      handleSubmit(event); // 매개변수로 event를 넣어줘야 한다.
+    }
   }
 
   return (
     <div>
       <div className='container'>        
-      <form onSubmit={handleSubmit}>
+      <form 
+        onSubmit={handleSubmit}
+      >
 
         <div className='container areaField'>
           
@@ -33,7 +43,8 @@ import { TodoContext } from '../../context/TodoContext';
               placeholder='할일 입력하기...' 
               className='container area'
               value={inputValue}
-              onChange={handleChange}
+              onChange={handleChange}   
+              onKeyDown={handleKeyDown}     
               rows='1'
               >
               

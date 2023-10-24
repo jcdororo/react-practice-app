@@ -7,6 +7,7 @@
   --main-area-font-color: #5E716A;
   --main-btn-font-color: #D2D7C6;
   --main-font-black: #363636;
+  --main-list-border-black: #363636;
   
   
   
@@ -86,3 +87,11 @@ textarea {
   border: solid 1px black;
 }
 
+.lists {
+  color: var(--main-font-black);
+  padding: 5px;
+  margin: 1px;
+  border: solid 1px var(--main-list-border-black);
+  background-color: var(--main-area-bg-color);
+  border-radius: 5px;
+}
