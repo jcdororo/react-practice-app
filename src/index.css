@@ -1,14 +1,17 @@
+/*COMMON*/
 :root {
   --main-bg-color: #ede6da;
-  --main-btn-bg-color: #228B22;
-  --main-areaField-bg-color: #d2d4c3;
-  --main-area-bg-color: white;
+  --main-btn-bg-color: #515D56;
+  --main-areaField-bg-color: #D2D7C6;
+  --main-area-bg-color: #FBF9F8;
   --main-area-font-color: #5E716A;
-  --main-btn-font-color: #d2d4c3;
+  --main-btn-font-color: #D2D7C6;
+  --main-font-black: #363636;
   
   
   
 }
+
 
 body {
   margin: 0;
@@ -17,12 +20,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--main-bg-color);
+  background-color: var(--main-btn-bg-color);
+  color: var(--main-font-black) ;
+  
   
 }
 
 
+a {
+  text-decoration: none;
+}
+
+textarea {
+  resize: none;
+}
+
+
 .btn {
+  border: solid 3px var(--main-font-black);
   background-color: var(--main-btn-bg-color);
   color: var(--main-btn-font-color);
   margin-left: 5px;
@@ -34,20 +49,21 @@ body {
   text-align: center;
   display: block;
   transition: .4s;
-
+  
   &:hover {
     scale: 1.2;
   }
 }
 
 
-.container {
+.container {  
+  padding: 12px;
   background-color: var(--main-areaField-bg-color);
   position: relative;
   align-items: center;
   justify-content: center;
   display: flex;
-  color: white;
+  color: var(--main-font-black);
 }
 
 .container .areaField {
@@ -56,13 +72,17 @@ body {
   
 }
 
-.container .area {  
+.container .area { 
   width: 200px;
-  height: 25px;
+  height: 11px;
   background-color: var(--main-area-bg-color);  
   color: var(--main-area-font-color);
-  resize: none;
+  
 }
 
-.container .cont.btn-inser {
+.container .todoList {
+  flex-direction: column;
+  padding: 1px;
+  border: solid 1px black;
 }
+
