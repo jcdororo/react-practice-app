@@ -14,3 +14,6 @@ https://velog.io/@velopert/react-context-tutorial 참고
 - onKeyDown 옵션으로 해결하였며, onKeyPress는 리액트에서 더이상 사용을 권장하지 않는다. - 해결!
 
 <br/>
+
+3. 입력창에 입력시, 불필요한 함수들이 호출됨
+- - 미해결

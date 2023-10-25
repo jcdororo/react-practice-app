@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import { TodoContext } from '../../context/TodoContext'
 
-const TodoList = () => {
-  const value = useContext(TodoContext);
+const TodoList = ({arrTodoList}) => {
+  // const value = useContext(TodoContext);
   // console.log('value',value);
   return (
     <div className='container'>
       <div className='container todoLists'>
-        {value.map((item, index) => 
+        {arrTodoList.map((item, index) => 
           <div key={index} className='container todoList'>
             <div className='list'>{item}</div>
             <input className='input-check' type='checkbox'/>

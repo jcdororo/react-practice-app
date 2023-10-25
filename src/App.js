@@ -13,12 +13,15 @@ function App() {
 
 
   return (
-    <TodoContext.Provider value={arrTodoList} >
+    // <TodoContext.Provider value={arrTodoList} >
+    <div>
+
       <TodoHeader />
-      <TodoInput setArrTodoList={setArrTodoList} />
-      <TodoList />
+      <TodoInput arrTodoList={arrTodoList} setArrTodoList={setArrTodoList} />
+      <TodoList arrTodoList={arrTodoList} />
       <TodoFooter />
-    </TodoContext.Provider>
+    </div>
+    // </TodoContext.Provider>
 
   );
 }
