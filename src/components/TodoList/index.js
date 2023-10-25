@@ -1,20 +1,27 @@
-import React, { useContext } from 'react'
-import { TodoContext } from '../../context/TodoContext'
+import React from 'react'
 
-const TodoList = ({arrTodoList}) => {
-  // const value = useContext(TodoContext);
-  // console.log('value',value);
+const TodoList = ({arrTodoList, setArrTodoList}) => {
+
+  
+
+  const onRemove = (id) => {
+
+    setArrTodoList(arrTodoList.filter(list => list.id !== id));
+  }
+
+
   return (
     <div className='container'>
-      <div className='container todoLists'>
+      <ul className='container todoLists'>
         {arrTodoList.map((item, index) => 
-          <div key={index} className='container todoList'>
-            <div className='list'>{item}</div>
+          <li key={item.id} className='container todoList'>
+            <div className='list'>{item.value}</div>
             <input className='input-check' type='checkbox'/>
-            <button className='btn btn-delete'>삭제</button>
-          </div>
+            <button className='btn btn-delete' 
+              onClick={() => onRemove(item.id)}>삭제</button>
+          </li>
         )}
-      </div>
+      </ul>
     </div>
   )
 }

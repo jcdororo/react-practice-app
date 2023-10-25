@@ -4,7 +4,6 @@ import TodoFooter from './components/TodoFooter';
 import TodoHeader from './components/TodoHeader';
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
-import { TodoContext } from './context/TodoContext';
 
 
 function App() {
@@ -13,15 +12,13 @@ function App() {
 
 
   return (
-    // <TodoContext.Provider value={arrTodoList} >
     <div>
 
       <TodoHeader />
       <TodoInput arrTodoList={arrTodoList} setArrTodoList={setArrTodoList} />
-      <TodoList arrTodoList={arrTodoList} />
+      <TodoList arrTodoList={arrTodoList} setArrTodoList={setArrTodoList} />
       <TodoFooter />
     </div>
-    // </TodoContext.Provider>
 
   );
 }
