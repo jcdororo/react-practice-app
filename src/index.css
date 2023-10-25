@@ -33,7 +33,12 @@ a {
 }
 
 textarea {
+  height: 11px;
   resize: none;
+  border-radius: 5px;
+  overflow: hidden;  
+  background-color: var(--main-area-bg-color);  
+  color: var(--main-area-font-color);
 }
 
 img {
@@ -62,6 +67,7 @@ img {
   text-align: center;
   display: block;
   transition: .4s;
+  z-index: 9;
   
   &:hover {
     scale: 1.2;
@@ -74,6 +80,7 @@ img {
 
 
 .container {  
+  z-index: 1;
   padding: 12px;
   background-color: var(--main-areaField-bg-color);
   position: relative;
@@ -95,9 +102,19 @@ img {
   background-color: var(--main-area-bg-color);  
   color: var(--main-area-font-color);
   
+  
+  
+}
+
+.sortButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: var(--main-areaField-bg-color);
 }
 
 .container .todoLists {  
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 5px 10px;
@@ -109,9 +126,13 @@ img {
   padding: 1px;
 }
 
-.btn-delete {
-
+.input-check {
+  transition: .4s;
+  &:hover {
+    scale: 1.2;
+  }
 }
+
 
 .list {
   width: 200px;
@@ -124,3 +145,4 @@ img {
   text-align: center;
   color: var(--main-area-font-color);
 }
+

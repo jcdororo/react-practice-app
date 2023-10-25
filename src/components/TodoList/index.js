@@ -11,6 +11,22 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
     setArrTodoList(arrTodoList.filter(list => list.id !== id));
   }
 
+  const onDownset = (arrTodoList) => {
+    const temp = [...arrTodoList];
+    
+
+    setArrTodoList(temp.sort((a, b) => b.id - a.id));
+
+  }
+
+
+  const upDownset = (arrTodoList) => {
+    const temp = [...arrTodoList];
+    
+
+    setArrTodoList(temp.sort((a, b) => a.id - b.id));
+
+  }
 
   if(arrTodoList.length === 0) {
     return (
@@ -23,17 +39,31 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
 
 
   return (
-    <div className='container'>
-      <ul className='container todoLists'>
-        {arrTodoList.map((item, index) => 
-          <li key={item.id} className='container todoList'>
-            <div className='list'>{item.value}</div>
-            <input className='input-check' type='checkbox'/>
-            <button className='btn btn-delete' 
-              onClick={() => onRemove(item.id)}>삭제</button>
-          </li>
-        )}
-      </ul>
+    <div>
+      <div className='sortButtons'>
+        <button 
+          className='btn'
+          onClick={() => onDownset(arrTodoList)}
+        >
+          최신 순 정렬</button>
+        <button 
+          className='btn'
+          onClick={() => upDownset(arrTodoList)}
+        >
+          오래된 순 정렬</button>
+      </div>
+      <div className='container'>
+        <ul className='container todoLists'>
+          {arrTodoList.map((item, index) => 
+            <li key={item.id} className='container todoList'>
+              <div className='list'>{item.value}</div>
+              <input className='input-check' type='checkbox'/>
+              <button className='btn btn-delete' 
+                onClick={() => onRemove(item.id)}>삭제</button>
+            </li>
+          )}
+        </ul>
+      </div>
     </div>
   )
 }
