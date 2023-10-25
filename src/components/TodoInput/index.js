@@ -4,7 +4,6 @@ import React, { useState } from 'react'
 
   const [inputValue, setInputValue] = useState('');
 
-  
 
   
 
@@ -48,6 +47,7 @@ import React, { useState } from 'react'
         <div className='container areaField'>
           
             <textarea 
+              id='area'
               placeholder='할일 입력하기...' 
               className='container area'
               value={inputValue}
@@ -69,3 +69,4 @@ import React, { useState } from 'react'
 }
 
 export default TodoInput
+

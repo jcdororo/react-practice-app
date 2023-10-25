@@ -20,19 +20,23 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
   }
 
 
-  const upDownset = (arrTodoList) => {
-    const temp = [...arrTodoList];
+  const onUpset = (arrTodoList) => {
     
-
+    const temp = [...arrTodoList];
     setArrTodoList(temp.sort((a, b) => a.id - b.id));
-
+  }
+  
+  const onFocus = () => {
+    const areaEl = document.getElementById('area'); 
+    const textEl = document.getElementById('text');
+    textEl.addEventListener('click', areaEl.focus());
   }
 
   if(arrTodoList.length === 0) {
     return (
     <div className='container'>
       <img src="/images/osume.png" alt="osume" />
-      <div className='container'>할일을 입력하세요...</div>
+      <div id='text' className='container' onClick={() => onFocus()}>할일을 입력하세요...</div>
     </div>
     ) 
   }
@@ -48,7 +52,7 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
           최신 순 정렬</button>
         <button 
           className='btn'
-          onClick={() => upDownset(arrTodoList)}
+          onClick={() => onUpset(arrTodoList)}
         >
           오래된 순 정렬</button>
       </div>
