@@ -8,12 +8,12 @@ import { TodoContext } from '../../context/TodoContext';
   
   const value = useContext(TodoContext);
 
-  console.log(value)
   
 
   const handleChange = (event) => {  
     setInputValue(event.target.value)
   }
+  
   
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,6 +23,9 @@ import { TodoContext } from '../../context/TodoContext';
     }
     setInputValue('');
   }
+
+  
+
 
   const handleKeyDown = (event) => {
     if(event.key === "Enter") {
@@ -44,7 +47,7 @@ import { TodoContext } from '../../context/TodoContext';
               className='container area'
               value={inputValue}
               onChange={handleChange}   
-              onKeyDown={handleKeyDown}     
+              onKeyDown={handleKeyDown}    
               rows='1'
               >
               

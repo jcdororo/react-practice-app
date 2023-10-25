@@ -57,6 +57,10 @@ textarea {
 }
 
 
+
+
+
+
 .container {  
   padding: 12px;
   background-color: var(--main-areaField-bg-color);
@@ -81,17 +85,29 @@ textarea {
   
 }
 
-.container .todoList {
+.container .todoLists {  
   flex-direction: column;
+  justify-content: space-between;
   padding: 1px;
   border: solid 1px black;
 }
 
-.lists {
+.container .todoList {  
+  padding: 1px;
+}
+
+.btn-delete {
+
+}
+
+.list {
+  width: 200px;
   color: var(--main-font-black);
-  padding: 5px;
+  padding: 5px 10px; 
   margin: 1px;
   border: solid 1px var(--main-list-border-black);
   background-color: var(--main-area-bg-color);
   border-radius: 5px;
+  text-align: center;
+  color: var(--main-area-font-color);
 }
