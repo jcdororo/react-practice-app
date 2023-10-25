@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+
 const TodoList = ({arrTodoList, setArrTodoList}) => {
 
   
@@ -7,6 +9,16 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
   const onRemove = (id) => {
 
     setArrTodoList(arrTodoList.filter(list => list.id !== id));
+  }
+
+
+  if(arrTodoList.length === 0) {
+    return (
+    <div className='container'>
+      <img src="/images/osume.png" alt="osume" />
+      <div className='container'>할일을 입력하세요...</div>
+    </div>
+    ) 
   }
 
 
@@ -27,3 +39,4 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
 }
 
 export default TodoList
+

@@ -36,6 +36,18 @@ textarea {
   resize: none;
 }
 
+img {
+  width: 50px;
+  height: 50px;
+}
+
+.img-footer {
+  margin-left: 1px;
+  margin-bottom: -6px;
+  width: 30px;
+  height: 30px;
+}
+
 
 .btn {
   border: solid 3px var(--main-font-black);
@@ -88,8 +100,8 @@ textarea {
 .container .todoLists {  
   flex-direction: column;
   justify-content: space-between;
-  padding: 1px;
-  border: solid 3px black;
+  padding: 5px 10px;
+  border: solid 3px var(--main-list-border-black);
   border-radius: 5px;
 }
 
