@@ -32,3 +32,10 @@ https://velog.io/@velopert/react-context-tutorial 참고
 
 6. 체크박스 기능 구현
 - 미해결
+
+7. 로컬 이미지 엑박 문제
+-    "homepage" : https://jcdororo.github.io/react-practice-app 이게 말썽이었다.   
+   https://velog.io/@goban/%EB%A6%AC%EC%95%A1%ED%8A%B8-gh-pages-%EB%B0%B0%ED%8F%AC-%ED%9B%84-%EB%A1%9C%EC%BB%AC%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%ED%91%9C%EC%8B%9C%EA%B0%80-%EC%95%88%EB%90%98%EB%8A%94-%EC%97%90%EB%9F%AC   
+      
+    https://velog.io/@jiyaho/React-github-page-%EB%B9%8C%EB%93%9C-%EC%8B%9C%EC%97%90-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%95%88-%EB%9C%A8%EB%8A%94-%EC%98%A4%EB%A5%98   
+      - 해결 !
