@@ -24,4 +24,8 @@ https://velog.io/@velopert/react-context-tutorial 참고
 - key값으로 고유한값인 Date.now()를 사용하였다. - 해결!
 
 5. 수정 기능 구현
+- event객체와 item객체를 함께 handleChange의 매개변수값으로 내려 수정하고, state를 다시 적용하는것으로 수정하기 구현 - 해결!
+
+
+6. 체크박스 기능 구현
 - 미해결

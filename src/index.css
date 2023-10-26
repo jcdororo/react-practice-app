@@ -165,7 +165,9 @@ img {
 }
 
 .list {
-  width: 210px;
+  display: flex;
+  flex-direction: row;
+  width: 310px;
   padding: 0px 0px; 
   margin: 1px;
   border: solid 1px var(--main-list-border-black);
@@ -184,17 +186,29 @@ img {
   text-align: center;
   vertical-align: middle;
   height: 30px;
-  width: 200px;
+  width: 290px;
   position: initial;
   color: var(--main-area-font-color);
+}
+
+
+.list-Background {
+  height: 44px;
+  width: 110px;
+  background-color: var(--main-area-bg-color);
+  right: 0%;
+  translate: -40px;
+  
+  
 }
 
 .checked {
   /* background-color: red; */
   background-image: url(/public/images/osume-purple.png);
   background-repeat: no-repeat;
-  background-size: 51px;
+  background-size: 82px;
   background-position: right;
+  
 }
 
 .container-notice {

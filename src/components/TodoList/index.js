@@ -20,7 +20,6 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
     const index = temp.indexOf(item);    
     temp[index].value = event.target.value;
     setArrTodoList([...arrTodoList]);
-    console.log('item',item)
   }
 
   const handleKeyDown = (event) => {
@@ -57,11 +56,15 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
     textEl.addEventListener('click', areaEl.focus());
   }
 
-  const handleCheck = (event) => {
-    setIsChecked(event.target.checked);
-    const listAreaCheckEl = document.querySelector('.listArea');
-    
-    if(!isChecked ? listAreaCheckEl.classList.add('checked') : listAreaCheckEl.classList.remove('checked'));
+  const handleCheck = (event, index) => {
+    const check = event.target.checked; 
+    const listAreaCheckEl = document.querySelector(`.todoLists`);
+    const list = listAreaCheckEl.querySelectorAll('li')[index].querySelector('.list-Background');
+    if(check) {
+      list.classList.add('checked')
+    } else {
+      list.classList.remove('checked');
+    }
     
   }
 
@@ -104,10 +107,12 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
                   onClick={() => handleClick(item)}
                   onChange={(e) =>handleChange(e, item)}    
                   onKeyDown={handleKeyDown}   
+                  spellCheck={false}
                 >
                 </textarea>
+                <div className='list-Background'></div>
               </div>
-              <input className='input-check' type='checkbox' onChange={handleCheck} />
+              <input className='input-check' type='checkbox' onChange={(e) => handleCheck(e, index)} />
               <button className='btn btn-delete' 
                 onClick={() => onRemove(item.id)}>삭제</button>
             </li>
