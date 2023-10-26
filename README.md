@@ -1,3 +1,6 @@
+# 배포
+https://jcdororo.github.io/react-practice-app/
+
 # context 참고
 https://velog.io/@velopert/react-context-tutorial 참고
 

@@ -73,7 +73,7 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
   if(arrTodoList.length === 0) {
     return (
     <div className='container container-notice'>
-      <img src="/images/osume.png" alt="osume" />
+      <img src="/public/images/osume.png" alt="osume" />
       <div id='text' className='container text-notice' onClick={() => onFocus()}>할일을 입력하세요...</div>
     </div>
     ) 
