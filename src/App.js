@@ -13,7 +13,6 @@ function App() {
 
   return (
     <div>
-
       <TodoHeader />
       <TodoInput arrTodoList={arrTodoList} setArrTodoList={setArrTodoList} />
       <TodoList arrTodoList={arrTodoList} setArrTodoList={setArrTodoList} />

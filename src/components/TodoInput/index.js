@@ -47,6 +47,7 @@ import React, { useState } from 'react'
         <div className='container areaField'>
           
             <textarea 
+              type='submit'
               id='area'
               placeholder='할일 입력하기...' 
               className='container area'

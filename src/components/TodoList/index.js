@@ -1,10 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 
 const TodoList = ({arrTodoList, setArrTodoList}) => {
 
   
+  const [isWriteable, setisWriteable] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+  
+
+  const handleClick = () => {
+    
+    setisWriteable(true);
+  }
+
+
+  const handleChange = (event, item) => {
+    let temp = arrTodoList;
+    const index = temp.indexOf(item);    
+    temp[index].value = event.target.value;
+    setArrTodoList([...arrTodoList]);
+    console.log('item',item)
+  }
+
+  const handleKeyDown = (event) => {
+    
+    if(event.key === "Enter") {
+      setisWriteable(false); // 매개변수로 event를 넣어줘야 한다.
+    }
+  }
+
 
   const onRemove = (id) => {
 
@@ -32,11 +57,21 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
     textEl.addEventListener('click', areaEl.focus());
   }
 
+  const handleCheck = (event) => {
+    setIsChecked(event.target.checked);
+    const listAreaCheckEl = document.querySelector('.listArea');
+    
+    if(!isChecked ? listAreaCheckEl.classList.add('checked') : listAreaCheckEl.classList.remove('checked'));
+    
+  }
+
+
+
   if(arrTodoList.length === 0) {
     return (
-    <div className='container'>
+    <div className='container container-notice'>
       <img src="/images/osume.png" alt="osume" />
-      <div id='text' className='container' onClick={() => onFocus()}>할일을 입력하세요...</div>
+      <div id='text' className='container text-notice' onClick={() => onFocus()}>할일을 입력하세요...</div>
     </div>
     ) 
   }
@@ -60,8 +95,19 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
         <ul className='container todoLists'>
           {arrTodoList.map((item, index) => 
             <li key={item.id} className='container todoList'>
-              <div className='list'>{item.value}</div>
-              <input className='input-check' type='checkbox'/>
+              <div className='list'>
+                <textarea 
+                  className='listArea' 
+                  disabled={false}
+                  value={item.value}
+                  readOnly={!isWriteable}
+                  onClick={() => handleClick(item)}
+                  onChange={(e) =>handleChange(e, item)}    
+                  onKeyDown={handleKeyDown}   
+                >
+                </textarea>
+              </div>
+              <input className='input-check' type='checkbox' onChange={handleCheck} />
               <button className='btn btn-delete' 
                 onClick={() => onRemove(item.id)}>삭제</button>
             </li>

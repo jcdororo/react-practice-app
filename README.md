@@ -16,9 +16,12 @@ https://velog.io/@velopert/react-context-tutorial 참고
 <br/>
 
 3. 입력창에 입력시, 불필요한 함수들이 호출됨
-- - 미해결
+- 미해결
 
 <br/>
 
 4. 삭제기능 구현
 - key값으로 고유한값인 Date.now()를 사용하였다. - 해결!
+
+5. 수정 기능 구현
+- 미해결

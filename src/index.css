@@ -39,6 +39,13 @@ textarea {
   overflow: hidden;  
   background-color: var(--main-area-bg-color);  
   color: var(--main-area-font-color);
+  border: none;
+  overflow: hidden;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 img {
@@ -51,9 +58,18 @@ img {
 }
 
 #text {
-  margin: 0px;
-  padding: 0px 10px;
+  cursor: pointer;
+  padding: 5px 10px; 
+  margin: 1px 10px;
+  border: solid 1px var(--main-list-border-black);
+  background-color: var(--main-area-bg-color);
+  border-radius: 5px;
+  text-align: center;
+  color: var(--main-area-font-color);
 }
+
+  
+
 
 .img-footer {
   margin-left: 1px;
@@ -144,16 +160,43 @@ img {
   }
 }
 
+.input-check:checked {
+  accent-color: var(--main-btn-bg-color);
+}
 
 .list {
-  width: 200px;
-  color: var(--main-font-black);
-  padding: 5px 10px; 
+  width: 210px;
+  padding: 0px 0px; 
   margin: 1px;
   border: solid 1px var(--main-list-border-black);
   background-color: var(--main-area-bg-color);
   border-radius: 5px;
+  position: relative;
+  overflow: visible;
+}
+
+
+.listArea {
+  padding-right: 8px;
+  padding-top: 12px;
+  font-size: 15px;
+  border: none;
   text-align: center;
+  vertical-align: middle;
+  height: 30px;
+  width: 200px;
+  position: initial;
   color: var(--main-area-font-color);
 }
 
+.checked {
+  /* background-color: red; */
+  background-image: url(/public/images/osume-purple.png);
+  background-repeat: no-repeat;
+  background-size: 51px;
+  background-position: right;
+}
+
+.container-notice {
+  padding-top: 63px;
+}
