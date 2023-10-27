@@ -13,10 +13,27 @@
   
 }
 
+.face {
+  transition: .4s;
+  &:hover {
+    font-size: 40px;
+  }
+}
+ 
 header {
   display: flex;
   justify-content: center;
   
+  
+}
+
+.headerText { 
+  background-color: var(--main-areaField-bg-color);
+  margin: 5px;
+  padding: 0px 50px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 30px;
   
 }
 

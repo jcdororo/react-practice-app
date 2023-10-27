@@ -2,11 +2,11 @@ import React from 'react'
 
 const TodoHeader = () => {
   return (
-    <div>
       <header>
-        TodoHeader
+        <div className='headerText'>
+          <p><span className='face'>._.</span> To-do List</p>
+        </div>
       </header>
-    </div>
   )
 }
 
