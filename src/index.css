@@ -13,6 +13,13 @@
   
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  
+  
+}
+
 
 body {
   margin: 0;
@@ -22,7 +29,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--main-btn-bg-color);
-  color: var(--main-font-black) ;
+  color: var(--main-font-black);
+  
   
   
 }
@@ -141,6 +149,7 @@ img {
 }
 
 .container .todoLists {  
+  margin: 16px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -174,7 +183,7 @@ img {
   background-color: var(--main-area-bg-color);
   border-radius: 5px;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 
 
@@ -199,7 +208,6 @@ img {
   right: 0%;
   translate: -40px;
   
-  
 }
 
 .checked {
@@ -208,6 +216,7 @@ img {
   background-repeat: no-repeat;
   background-size: 82px;
   background-position: right;
+  scale: 1.0;
   
 }
 

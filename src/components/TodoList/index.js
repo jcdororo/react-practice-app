@@ -6,7 +6,6 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
 
   
   const [isWriteable, setisWriteable] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
   
 
   const handleClick = () => {
@@ -18,7 +17,8 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
   const handleChange = (event, item) => {
     let temp = arrTodoList;
     const index = temp.indexOf(item);    
-    temp[index].value = event.target.value;
+    temp[index].value = event.target.value;    
+    localStorage.setItem('list',JSON.stringify([...arrTodoList]));
     setArrTodoList([...arrTodoList]);
   }
 
@@ -29,23 +29,21 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
     }
   }
 
-
+  // 삭제버튼
   const onRemove = (id) => {
+    const filter = arrTodoList.filter(list => list.id !== id)
 
-    setArrTodoList(arrTodoList.filter(list => list.id !== id));
+    localStorage.setItem('list',JSON.stringify(filter));
+    setArrTodoList(filter);
   }
-
+  // 최신 순 정렬 버튼
   const onDownset = (arrTodoList) => {
     const temp = [...arrTodoList];
-    
-
     setArrTodoList(temp.sort((a, b) => b.id - a.id));
-
   }
 
-
+  // 오래된 순 정렬 버튼
   const onUpset = (arrTodoList) => {
-    
     const temp = [...arrTodoList];
     setArrTodoList(temp.sort((a, b) => a.id - b.id));
   }
@@ -55,16 +53,20 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
     const textEl = document.getElementById('text');
     textEl.addEventListener('click', areaEl.focus());
   }
-
-  const handleCheck = (event, index) => {
+  // 체크 버튼
+  const handleCheck = (event, index, item) => {
     const check = event.target.checked; 
-    const listAreaCheckEl = document.querySelector(`.todoLists`);
-    const list = listAreaCheckEl.querySelectorAll('li')[index].querySelector('.list-Background');
-    if(check) {
-      list.classList.add('checked')
-    } else {
-      list.classList.remove('checked');
-    }
+    
+    const filter = arrTodoList.filter(list => list.id === item.id)
+    filter[0].check = check;
+    const temp = [...arrTodoList.slice(0,index),
+                  ...arrTodoList.slice(index,index+1),
+                  ...arrTodoList.slice(index+1) ]
+    localStorage.setItem('list',JSON.stringify(temp));
+    setArrTodoList(temp);
+
+    
+
     
   }
 
@@ -110,9 +112,14 @@ const TodoList = ({arrTodoList, setArrTodoList}) => {
                   spellCheck={false}
                 >
                 </textarea>
-                <div className='list-Background'></div>
+                <div className={`list-Background ${item.check ? 'checked' : ''}`}></div>
               </div>
-              <input className='input-check' type='checkbox' onChange={(e) => handleCheck(e, index)} />
+              <input 
+                className= 'input-check'
+                type='checkbox' 
+                onChange={(e) => handleCheck(e, index, item)} 
+                checked={item.check ? true : false }
+              />
               <button className='btn btn-delete' 
                 onClick={() => onRemove(item.id)}>삭제</button>
             </li>

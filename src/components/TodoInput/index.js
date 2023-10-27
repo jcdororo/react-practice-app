@@ -1,11 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
   const TodoInput = ({arrTodoList, setArrTodoList}) => {
 
   const [inputValue, setInputValue] = useState('');
 
-
+  useEffect(() => {    
+    if(JSON.parse(localStorage.getItem('list')) !== null){
+      const storageList = JSON.parse(localStorage.getItem('list'));
+      if(storageList.length !== 0){
+        setArrTodoList(storageList);
+      }
+    }
+    
+  }, [])
   
+
+ 
 
   const handleChange = (event) => {  
     setInputValue(event.target.value)
@@ -18,10 +28,13 @@ import React, { useState } from 'react'
     if(inputValue != ''){
       const newValue = {
         id: Date.now(),
-        value: inputValue
+        value: inputValue,
+        check: false
       }
       const inputList = [...arrTodoList, newValue]
+      localStorage.setItem('list',JSON.stringify(inputList));
       setArrTodoList(inputList);
+      
     }
     setInputValue('');
   }

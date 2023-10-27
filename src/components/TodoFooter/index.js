@@ -3,7 +3,7 @@ import React from 'react'
 const TodoFooter = () => {
   
   return (
-    <div>
+    <footer>
       <div className='container'>
         <div className='container-footer'>
           inspired design By... <a href='https://osumekeys.com/products/matcha-keycaps' rel="noreferrer" target='_blank'> osume matcha</a>
@@ -12,7 +12,7 @@ const TodoFooter = () => {
 
 
       </div>
-    </div>
+    </footer>
   )
 }
 
