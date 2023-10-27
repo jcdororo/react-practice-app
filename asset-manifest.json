@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-practice-app/static/css/main.778c450c.css",
-    "main.js": "/react-practice-app/static/js/main.1c6547d8.js",
+    "main.css": "/react-practice-app/static/css/main.4f587ced.css",
+    "main.js": "/react-practice-app/static/js/main.31738755.js",
     "static/js/787.e9a04dc3.chunk.js": "/react-practice-app/static/js/787.e9a04dc3.chunk.js",
     "static/media/osume-purple.png": "/react-practice-app/static/media/osume-purple.3f44c3fcfbbe1439715b.png",
     "index.html": "/react-practice-app/index.html",
-    "main.778c450c.css.map": "/react-practice-app/static/css/main.778c450c.css.map",
-    "main.1c6547d8.js.map": "/react-practice-app/static/js/main.1c6547d8.js.map",
+    "main.4f587ced.css.map": "/react-practice-app/static/css/main.4f587ced.css.map",
+    "main.31738755.js.map": "/react-practice-app/static/js/main.31738755.js.map",
     "787.e9a04dc3.chunk.js.map": "/react-practice-app/static/js/787.e9a04dc3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.778c450c.css",
-    "static/js/main.1c6547d8.js"
+    "static/css/main.4f587ced.css",
+    "static/js/main.31738755.js"
   ]
 }
